@@ -14,7 +14,7 @@ const MapPage = () => {
 
   return (
     <div className="app-container">
-      <header className="app-header">LinkedOut</header>
+      <header className="app-header">🌍 LinkedOut</header>
       <FriendBar onSelectAdventure={handleSelectAdventure} />
       <div className="app-content">
         <Map selectedAdventure={selectedAdventure} />

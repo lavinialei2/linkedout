@@ -1,28 +1,3 @@
-/* IntroSlideshow.css */
-@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600&display=swap');
-
-html, body, #root {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.app-container {
-  width: 375; 
-  height: 812; 
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  background-color: #ffffff;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center; 
-}
 
 .slideshow-container {
   flex: 1;
