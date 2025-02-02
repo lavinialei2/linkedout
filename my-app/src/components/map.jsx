@@ -1,20 +1,32 @@
-import React, { useState } from 'react';
-import { MapContainer, TileLayer, Polyline, Marker, Popup } from 'react-leaflet';
+import React, { useEffect, useState } from 'react';
+import { MapContainer, TileLayer, Polyline, Marker, Popup, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import { adventures } from '../data/adventures';
+import { adventures } from '../data';
+import './Map.css';
 
 const Map = ({ selectedAdventure }) => {
-  const [adventureData, setAdventureData] = useState(null);
+  const [highlightedAdventure, setHighlightedAdventure] = useState(null);
 
-  React.useEffect(() => {
+  const PanToAdventure = ({ coordinates }) => {
+    const map = useMap();
+    useEffect(() => {
+      if (coordinates && coordinates.length > 0) {
+        const bounds = coordinates.map(([lat, lng]) => [lat, lng]);
+        map.fitBounds(bounds, { padding: [50, 50] });
+      }
+    }, [coordinates, map]);
+    return null;
+  };
+
+  useEffect(() => {
     if (selectedAdventure) {
-      setAdventureData(adventures[selectedAdventure]);
+      setHighlightedAdventure(adventures[selectedAdventure]);
     }
   }, [selectedAdventure]);
 
   return (
     <MapContainer
-      center={[34.0522, -118.2437]} 
+      center={[34.0522, -118.2437]}
       zoom={13}
       style={{ width: '100%', height: '100%' }}
     >
@@ -23,20 +35,33 @@ const Map = ({ selectedAdventure }) => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
 
-      {adventureData && (
-        <>
-          <Polyline positions={adventureData.route} color="blue" weight={4} />
-
-          {adventureData.stops.map((stop) => (
+      {Object.values(adventures).map((adventure) => (
+        <React.Fragment key={adventure.name}>
+          <Polyline
+            positions={adventure.route}
+            color={highlightedAdventure?.name === adventure.name ? 'red' : 'blue'}
+            weight={highlightedAdventure?.name === adventure.name ? 5 : 3}
+          />
+          {adventure.stops.map((stop) => (
             <Marker key={stop.id} position={stop.coordinates}>
               <Popup>
-                <b>{stop.name}</b>
-                <p>Type: {stop.type}</p>
+                <div className="popup-content">
+                  <img src={stop.image} alt={stop.name} className="popup-image" />
+                  <h2>{stop.name}</h2>
+                  <p>{stop.description}</p>
+                  <div className="popup-tags">
+                    {stop.tags.map((tag, index) => (
+                      <span key={index} className="tag">{tag}</span>
+                    ))}
+                  </div>
+                </div>
               </Popup>
             </Marker>
           ))}
-        </>
-      )}
+        </React.Fragment>
+      ))}
+
+      {highlightedAdventure && <PanToAdventure coordinates={highlightedAdventure.route} />}
     </MapContainer>
   );
 };

@@ -1,10 +1,6 @@
 import React from 'react';
 import './FriendBar.css';
-
-const friends = [
-  { id: 1, name: 'Friend 1', img: '/public/icons/friend1.png', adventureId: 'adventure1' },
-  { id: 2, name: 'Friend 2', img: '/public/icons/friend2.png', adventureId: 'adventure2' },
-];
+import { friends } from '../data';
 
 const FriendBar = ({ onSelectAdventure }) => {
   return (
