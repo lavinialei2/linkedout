@@ -1,4 +1,6 @@
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -9,8 +11,8 @@ html, body, #root {
 }
 
 .app-container {
-  width: 375px; 
-  height: 812px; 
+  width: 375px;
+  height: 812px;
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -27,9 +29,9 @@ html, body, #root {
   left: 0;
   width: 100%;
   height: 50px;
-  background-color: #A6D6EB;
+  background-color: #a6d6eb;
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 18px;
   font-weight: 600;
   text-align: center;
@@ -40,24 +42,50 @@ html, body, #root {
   border-top-right-radius: 10px;
 }
 
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  padding: 5px 10px;
+  position: absolute;
+  top: 4px;
+  left: 10px;
+  width: 280px;
+}
+
+.search-input {
+  border: none;
+  background: transparent;
+  flex-grow: 1;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  padding: 5px;
+  outline: none;
+}
+
+.search-icon {
+  color: #666;
+}
+
 .app-content {
   flex: 1;
-  margin-top: 140px; 
+  margin-top: 140px;
   position: relative;
 }
 
 .stamp-icon {
   cursor: pointer;
-  width: 33px; 
+  width: 33px;
   height: 40px;
   position: absolute;
-  top: 5px;
-  left: 15px;
+  bottom: 5px;
+  right: 15px;
 }
 
 .logo-icon {
   cursor: pointer;
-  width: 180px; 
+  width: 180px;
   height: 30px;
   position: absolute;
   top: 10px;
@@ -80,17 +108,19 @@ html, body, #root {
   align-items: center;
   cursor: pointer;
   z-index: 1000;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .floating-button:hover {
   background-color: #8cc7e0;
+  transform: translateY(-10px) scale(1.3); /* Moves up and slightly enlarges */
 }
 
 .floating-button .list-icon {
   width: 56px;
   height: 56px;
 }
+
 
 /* Adventure panel styles */
 .adventure-panel {
@@ -176,12 +206,64 @@ html, body, #root {
   margin-right: 15px;
 }
 
+.stop-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.stop-header {
+  display: flex;
+  align-items: flex-start;
+}
+
 .stop-image {
   width: 60px;
   height: 60px;
   object-fit: cover;
   border-radius: 5px;
   margin-right: 15px;
+}
+
+.stop-details {
+  flex: 1;
+}
+
+.stop-details h3 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.stop-details p {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.see-more-button {
+  background: none;
+  border: none;
+  color: #4a90e2;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  padding: 5px 0;
+}
+
+.see-more-button:hover {
+  text-decoration: underline;
+}
+
+.expanded-content {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #e0e0e0;
 }
 
 .adventure-details,
@@ -219,19 +301,94 @@ html, body, #root {
   color: #666;
 }
 
+.routes-section {
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
+.routes-list {
+  list-style-type: none;
+  padding: 0;
+}
+
 .route-item {
   display: flex;
   align-items: center;
-  padding: 10px 0;
+  gap: 10px;  /* Adjust space between the text and the line */
+  margin-bottom: 10px;  /* Space between each route item */
+}
+
+.route-text {
+  flex: 1; /* Allow the text to take up available space */
 }
 
 .route-line {
-  width: 40px;
-  height: 4px;
-  margin-right: 10px;
+  width: 50px;  /* Fixed width for the line */
+  height: 6px;
+  background-color: #a6d6eb;
+  border-radius: 3px;
+  outline: none; /* Remove outline */
+  border: none; /* Ensure no border */
 }
 
-.route-number {
-  font-size: 14px;
+
+
+
+.stop-details-content {
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.stop-image-large {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.star {
+  color: #d1d5db;
+}
+
+.star.filled {
+  color: #fbbf24;
+}
+
+.rating-text {
+  margin-left: 5px;
   font-weight: 600;
+}
+
+.comments-section {
+  margin-top: 20px;
+}
+
+.comments-section h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.comments-section h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.comments-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.comment {
+  background-color: #f3f4f6;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
 }

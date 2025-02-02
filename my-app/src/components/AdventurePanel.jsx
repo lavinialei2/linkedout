@@ -1,9 +1,9 @@
 import { useState } from "react"
-import { adventures } from "../data"
-import { ChevronLeft } from "lucide-react"
+import { ChevronLeft, Star, StarHalf, ChevronDown, ChevronUp } from "lucide-react"
 
-const AdventurePanel = ({ isOpen, onClose, onSelectAdventure, selectedAdventure }) => {
+const AdventurePanel = ({ isOpen, onClose, onSelectAdventure, selectedAdventure, adventures }) => {
   const [viewingAdventure, setViewingAdventure] = useState(null)
+  const [expandedStops, setExpandedStops] = useState({})
 
   const getFirstStopImage = (adventure) => {
     if (adventure.stops && adventure.stops.length > 0 && adventure.stops[0].image) {
@@ -14,11 +14,20 @@ const AdventurePanel = ({ isOpen, onClose, onSelectAdventure, selectedAdventure 
 
   const handleAdventureClick = (id) => {
     setViewingAdventure(adventures[id])
+    setExpandedStops({})
     onSelectAdventure(id)
   }
 
   const handleBackClick = () => {
     setViewingAdventure(null)
+    setExpandedStops({})
+  }
+
+  const toggleStopExpansion = (stopId) => {
+    setExpandedStops((prev) => ({
+      ...prev,
+      [stopId]: !prev[stopId],
+    }))
   }
 
   const renderTags = (tags) => (
@@ -31,6 +40,23 @@ const AdventurePanel = ({ isOpen, onClose, onSelectAdventure, selectedAdventure 
         ))}
     </div>
   )
+
+  const renderRating = (rating) => {
+    const fullStars = Math.floor(rating)
+    const hasHalfStar = rating % 1 !== 0
+    return (
+      <div className="rating" aria-label={`Rating: ${rating} out of 5 stars`}>
+        {[...Array(fullStars)].map((_, i) => (
+          <Star fill="orange" key={i} className="star filled" size={16} />
+        ))}
+        {hasHalfStar && <StarHalf className="star filled" size={16} />}
+        {[...Array(5 - Math.ceil(rating))].map((_, i) => (
+          <Star key={i + fullStars + (hasHalfStar ? 1 : 0)} className="star" size={16} />
+        ))}
+        <span className="rating-text">{rating.toFixed(1)}</span>
+      </div>
+    )
+  }
 
   const renderAdventureList = () => (
     <>
@@ -77,17 +103,62 @@ const AdventurePanel = ({ isOpen, onClose, onSelectAdventure, selectedAdventure 
       <div className="adventure-items">
         {viewingAdventure.stops.map((stop) => (
           <div key={stop.id} className="stop-item">
-            <img src={stop.image || "/placeholder.svg?height=60&width=60"} alt={stop.name} className="stop-image" />
-            <div className="stop-details">
-              <h3>{stop.name}</h3>
-              <p>{stop.description}</p>
-              {renderTags(stop.tags)}
+            <div className="stop-header">
+              <img src={stop.image || "/placeholder.svg?height=60&width=60"} alt={stop.name} className="stop-image" />
+              <div className="stop-details">
+                <h3>{stop.name}</h3>
+                <p>{stop.description}</p>
+                {renderTags(stop.tags)}
+                <button className="see-more-button" onClick={() => toggleStopExpansion(stop.id)}>
+                  {expandedStops[stop.id] ? (
+                    <>
+                      See less <ChevronUp size={16} />
+                    </>
+                  ) : (
+                    <>
+                      See more <ChevronDown size={16} />
+                    </>
+                  )}
+                </button>
+              </div>
             </div>
+            {expandedStops[stop.id] && (
+              <div className="expanded-content">
+                {renderRating(stop.rating)}
+                <div className="comments-section">
+                  <h4>Comments</h4>
+                  {stop.comments && stop.comments.length > 0 ? (
+                    <ul className="comments-list">
+                      {stop.comments.map((comment, index) => (
+                        <li key={index} className="comment">
+                          {comment}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p>No comments yet.</p>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
         ))}
+        {/* Render the Routes List */}
+        <div className="routes-section">
+          <h4>Bus routes taken:</h4>
+          <ul className="routes-list">
+            {viewingAdventure.routes.map((route, index) => (
+              <li key={index} className="route-item">
+                <span className="route-text">{route}</span>
+                <hr className="route-line" />
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </>
   )
+  
 
   return (
     <div className={`adventure-panel ${isOpen ? "open" : ""}`}>
