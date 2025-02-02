@@ -115,7 +115,7 @@ export const adventures = {
         rating: 4,
       },
     ],
-    routes: ["Metro 17", "Metro 926"],
+    routes: ["Big Blue Bus R12", "Metro E Line", "Metro 761"],
   },
 
   // 3. SGV Cultural & Food Tour
