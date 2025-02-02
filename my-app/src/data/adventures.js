@@ -1,6 +1,6 @@
 export const adventures = {
   adventure1: {
-    name: "Plane Watch, Lalibela Dinner & Urban Lights",
+    name: "Things to do after seeing someone off at LAX",
     route: [
       [34.0689, -118.4452],  // UCLA (Start)
       [33.9425, -118.4083],  // LAX (Plane watching)
@@ -14,16 +14,16 @@ export const adventures = {
         type: "destination",
         name: "LAX (Plane Watching)",
         coordinates: [33.9425, -118.4083],
-        description: "A popular spot for watching planes land and take off from LAX.",
+        description: "I like planes.",
         image: "/places/lax.jpg",
         tags: ["Planes", "Observation", "Outdoor"],
       },
       {
         id: 2,
         type: "restaurant",
-        name: "Lalibela (Little Ethiopia)",
+        name: "Lalibela",
         coordinates: [34.0617, -118.2784],
-        description: "Cozy Ethiopian restaurant offering traditional dishes.",
+        description: "Cozy restaurant in Little Ethiopia. Great injera!",
         image: "/places/lalibela.jpeg",
         tags: ["Ethiopian", "Dinner", "Casual"],
       },
@@ -32,7 +32,7 @@ export const adventures = {
         type: "destination",
         name: "Urban Lights Installation (LACMA)",
         coordinates: [34.0620, -118.2478],
-        description: "Iconic outdoor installation with over 200 street lamps, perfect for photos.",
+        description: "Where I bring people who come visit me when I haven't seen them in a long time.",
         image: "/places/ulights.jpeg",
         tags: ["Art", "Outdoor", "Landmark"],
       },
@@ -54,19 +54,19 @@ export const adventures = {
     stops: [
       {
         id: 1,
-        type: "restaurant",
+        type: "destination",
         name: "Mandarin Noodle House",
         coordinates: [34.0603, -118.1437],
-        description: "Famous for their hand-pulled noodles and delicious dumplings.",
+        description: "It's been 489 days since I've had this noodle soup, and I miss it. Cash-only establishment.",
         image: "/places/mnh.jpeg",
         tags: ["Noodles", "Casual", "Local"],
       },
       {
         id: 2,
-        type: "restaurant",
+        type: "destination",
         name: "Kee Wah Bakery",
         coordinates: [34.0601, -118.1428],
-        description: "Traditional Chinese bakery serving tasty pastries and buns.",
+        description: "Traditional Chinese bakery serving tasty pastries and buns. I got a lil fruit tart.",
         image: "/places/keewah.jpg",
         tags: ["Bakery", "Asian", "Snacks"],
       },
@@ -75,16 +75,16 @@ export const adventures = {
         type: "destination",
         name: "Sierra Vista Park",
         coordinates: [34.0945, -118.1425],
-        description: "A local park perfect for a short break during the crawl.",
+        description: "A local park perfect for a short break during the crawl. You can sit on a rock and ponder.",
         image: "/places/sierravista.jpeg",
         tags: ["Park", "Outdoor", "Relaxing"],
       },
       {
         id: 4,
-        type: "restaurant",
+        type: "destination",
         name: "Ten Ren Tea",
         coordinates: [34.0962, -118.1287],
-        description: "Popular tea house offering bubble tea and traditional drinks.",
+        description: "Walked an hour to get here, but the MP to Alhambra neighborhoods were such a delight to walk around in again after ten years.",
         image: "/places/tenren.jpeg",
         tags: ["Tea", "Bubble Tea", "Casual"],
       },
@@ -93,7 +93,7 @@ export const adventures = {
         type: "destination",
         name: "Almansor Park",
         coordinates: [34.0869, -118.1300],
-        description: "A peaceful park with a lake, perfect for a relaxing stroll.",
+        description: "A peaceful park with a lake, perfect for a relaxing stroll before heading back home.",
         image: "/places/almansor.jpg",
         tags: ["Park", "Nature", "Outdoor"],
       },
@@ -102,7 +102,7 @@ export const adventures = {
 
   // 3. SGV Cultural & Food Tour
   adventure3: {
-    name: "SGV Cultural & Food Tour",
+    name: "Long walks through unfamiliar neighborhoods",
     route: [
       [34.0689, -118.4452],  // UCLA (Start)
       [34.0971, -118.1060],  // Chao Wei Ju (San Gabriel)
@@ -113,10 +113,10 @@ export const adventures = {
     stops: [
       {
         id: 1,
-        type: "restaurant",
+        type: "destination",
         name: "Chao Wei Ju",
         coordinates: [34.0971, -118.1060],
-        description: "Authentic Chinese restaurant famous for its unique flavors.",
+        description: "Came here at the recommendation of someone I no longer remember from a year ago. Good.",
         image: "/places/cwj.jpeg",
         tags: ["Chinese", "Restaurant", "Casual"],
       },
@@ -125,7 +125,7 @@ export const adventures = {
         type: "destination",
         name: "Historic San Gabriel",
         coordinates: [34.0965, -118.1054],
-        description: "Explore the historical sites and architecture of San Gabriel.",
+        description: "Historical sites and architecture of San Gabriel. Very vibes.",
         image: "/places/sangab.jpeg",
         tags: ["History", "Cultural", "Outdoor"],
       },
@@ -134,7 +134,7 @@ export const adventures = {
         type: "destination",
         name: "Huntington Library & Gardens",
         coordinates: [34.1254, -118.1253],
-        description: "Explore beautiful gardens and art collections at this cultural gem.",
+        description: "Very pretty but also expensive to enter (though there are free days). But worth it to go just to sit outside in the free part of the gardens and read a book.",
         image: "/places/huntington.jpg",
         tags: ["Museum", "Art", "Nature"],
       },
@@ -143,7 +143,7 @@ export const adventures = {
 
   // 4. Venice Creamery, Beach & Mitsuwa Marketplace
   adventure4: {
-    name: "Venice Creamery, Beach & Mitsuwa Marketplace",
+    name: "Ice cream and the beach!",
     route: [
       [34.0689, -118.4452],
       [33.9982, -118.4719],  // Wanderlust Creamery (Venice)
@@ -154,10 +154,10 @@ export const adventures = {
     stops: [
       {
         id: 1,
-        type: "restaurant",
+        type: "destination",
         name: "Wanderlust Creamery",
         coordinates: [33.9982, -118.4719],
-        description: "Trendy ice cream shop offering unique, globally inspired flavors.",
+        description: "I love vietnamese rocky road! Went very well with the passionfruit cacao!",
         image: "/places/icecream.jpeg",
         tags: ["Ice Cream", "Dessert", "Trendy"],
       },
@@ -166,7 +166,7 @@ export const adventures = {
         type: "destination",
         name: "Venice Beach",
         coordinates: [33.99, -118.478],
-        description: "Lively beach with a boardwalk, street performers, and unique culture.",
+        description: "Lively beach with a boardwalk, street performers, and unique culture. So many sand pipers. So lovely.",
         image: "/places/venice.jpeg",
         tags: ["Beach", "Casual", "Street Performers"],
       },
@@ -175,14 +175,14 @@ export const adventures = {
         type: "destination",
         name: "Mitsuwa Marketplace",
         coordinates: [33.9989, -118.4792],
-        description: "Japanese supermarket and food court with authentic Asian cuisine.",
+        description: "Ramen here hits.",
         image: "/places/mitsu.jpeg",
         tags: ["Supermarket", "Food Court", "Japanese"],
       },
     ],
   },
   adventure5: {
-    name: "Art & Culture Downtown LA",
+    name: "Cool museums and other places in downtown LA",
     route: [
       [34.0689, -118.4452],
       [34.0522, -118.2437],  // Los Angeles City Hall (Start)
@@ -198,7 +198,7 @@ export const adventures = {
         type: "destination",
         name: "Los Angeles City Hall",
         coordinates: [34.0522, -118.2437],
-        description: "Iconic building and a symbol of LA's civic pride, offering great views from its observation deck.",
+        description: "Iconic building and a symbol of LA's civic pride, offering great views from its observation deck. Cool building to see at some point.",
         image: "/places/lach.jpg",
         tags: ["Landmark", "Government", "Architecture"],
       },
@@ -207,7 +207,7 @@ export const adventures = {
         type: "destination",
         name: "The Broad Museum",
         coordinates: [34.0521, -118.2427],
-        description: "A contemporary art museum featuring works by Jeff Koons, Roy Lichtenstein, and more.",
+        description: "A contemporary art museum featuring works by Jeff Koons, Roy Lichtenstein, Barabara Kruger, and more. The tunnel-like escalator is really cool.",
         image: "/places/broad.jpeg",
         tags: ["Art", "Museum", "Contemporary"],
       },
@@ -216,7 +216,7 @@ export const adventures = {
         type: "destination",
         name: "Museum of Contemporary Art (MOCA)",
         coordinates: [34.0487, -118.2500],
-        description: "A leading institution for contemporary art in Los Angeles, featuring a wide range of exhibitions.",
+        description: "I liked the exhibit that was a bunch of photos of shoes. There were a bunch of ducks too. And I saw a painting I only ever remember seeing as a screensaver a long time ago.",
         image: "/places/moca.jpg",
         tags: ["Art", "Museum", "Contemporary"],
       },
@@ -234,14 +234,14 @@ export const adventures = {
         type: "destination",
         name: "Walt Disney Concert Hall",
         coordinates: [34.0392, -118.2547],
-        description: "Frank Gehry-designed concert hall, known for its stunning architecture and acoustics.",
+        description: "Frank Gehry-designed concert hall, known for its stunning architecture and acoustics. There's a little outdoor upstairs garden that's a good place to eat lunch if you pack one.",
         image: "/places/wdch.jpg",
         tags: ["Art", "Music", "Landmark"],
       },
     ],
   },
   adventure6: {
-    name: "Tierra Mia Coffee, Pho & The Last Bookstore",
+    name: "Cozy coffee and books",
     route: [
       [34.0689, -118.4452],  // UCLA (Start)
       [34.0615, -118.2520],  // Tierra Mia Coffee (Westwood)
@@ -252,19 +252,19 @@ export const adventures = {
     stops: [
       {
         id: 1,
-        type: "restaurant",
+        type: "destination",
         name: "Tierra Mia Coffee",
         coordinates: [34.0615, -118.2520],
-        description: "Latin-inspired coffee chain known for its rich, flavorful coffee drinks.",
+        description: "Latin-inspired coffee chain known for its rich, flavorful coffee drinks. Horchata frappe is the best (I need to try more flavors though)!",
         image: "/places/horchata.jpeg",
         tags: ["Coffee", "Latino-Owned", "Casual"],
       },
       {
         id: 2,
-        type: "restaurant",
+        type: "destination",
         name: "Pho 79",
         coordinates: [34.0456, -118.2672],
-        description: "Casual spot serving pho and other Vietnamese favorites in Koreatown.",
+        description: "Pho always hits. But in general, hooray food in Koreatown.",
         image: "/places/pho.jpg",
         tags: ["Pho", "Vietnamese", "Casual"],
       },
@@ -273,7 +273,7 @@ export const adventures = {
         type: "destination",
         name: "The Last Bookstore",
         coordinates: [34.0423, -118.2487],
-        description: "Whimsical and artistic bookstore known for its unique layout and selection of books.",
+        description: "Whimsy! I love whimsy.",
         image: "/places/tlbs.jpeg",
         tags: ["Books", "Unique", "Arts"],
       },
