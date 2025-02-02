@@ -46,8 +46,8 @@ html, body, #root {
 }
 
 .slide-image {
-  width: 200px;
-  height: auto;
+  width: 100vh;
+  height: 100vh;
   object-fit: contain;
 }
 
