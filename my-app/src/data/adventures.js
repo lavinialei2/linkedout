@@ -67,7 +67,7 @@ export const adventures = {
         description: "It's been 489 days since I've had this noodle soup, and I miss it. Cash-only establishment.",
         image: "/places/mnh.jpeg",
         tags: ["Noodles", "Casual", "Local", "Asian-Owned", "BIPOC-Owned", "Wheelchair-Accessible", "Small business"],
-        comments: ["So delicious! Great place to meet up with an old friend.", "Paid respects with the owner today in remembrance of those we lost in the MPK shooting.", "I've been coming here since 2005! Delicious food and lovely owner.", "The toucan has my wife."],
+        comments: ["So delicious! Great place to meet up with an old friend.", "Paid respects with the owner today in remembrance of those we lost in the MPK shooting.", "I've been coming here since 2005! Delicious food and lovely owner.", "The toucan has my wife, send heLJLKDAS"],
         rating: 4.0,
       },
       {
