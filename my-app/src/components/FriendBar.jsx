@@ -1,8 +1,16 @@
 import React from 'react';
 import './FriendBar.css';
+import { useNavigate } from 'react-router-dom'; 
+
 import { friends } from '../data';
 
 const FriendBar = ({ onSelectAdventure }) => {
+  const navigate = useNavigate(); 
+
+  const handleAddFriend = () => {
+    navigate('/addFriend'); 
+  };
+
   return (
     <div className="friend-bar">
       {friends.map((friend) => (
@@ -14,6 +22,11 @@ const FriendBar = ({ onSelectAdventure }) => {
           <img src={friend.img} alt={friend.name} />
         </div>
       ))}
+
+      {/* Add the circular button with a plus sign at the end */}
+      <button className="add-friend-btn" onClick={handleAddFriend}>
+        +
+      </button>
     </div>
   );
 };

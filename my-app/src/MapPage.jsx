@@ -32,6 +32,10 @@ const MapPage = () => {
     setSearchTerm(event.target.value)
   }
 
+  const handlePostClick = () => {
+    navigate("/post")
+  }
+
   useEffect(() => {
     const filtered = Object.entries(adventures).filter(([id, adventure]) => {
       const tags = adventure.stops.flatMap((stop) => stop.tags || [])
@@ -70,6 +74,7 @@ const MapPage = () => {
         <button className="floating-button" onClick={toggleAdventurePanel}>
           <img src={listIcon || "/placeholder.svg?height=24&width=24"} alt="List Icon" className="list-icon" />
         </button>
+        <button className="floating-button2" onClick={handlePostClick}>+</button>
       </div>
     </div>
   )

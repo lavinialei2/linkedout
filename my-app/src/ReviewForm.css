@@ -1,0 +1,120 @@
+.app-container{
+    background: #A6D6EB;
+}
+.review-container {
+    font-family: 'Poppins', sans-serif;
+    width: 90%;
+    max-width: 600px;
+    height: 620px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .review-header {
+    background: #f8f8f8;
+    padding: 15px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .review-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .title-section {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 12px;
+    background: #f9f9f9;
+  }
+  
+  .title-input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    background: none;
+  }
+  
+  .icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #555;
+  }
+  
+  .review-textarea {
+    width: 100%; /* Ensures it stays within the container */
+    max-width: 100%; /* Prevents overflow */
+    height: 300px;
+    padding: 12px;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: none;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+  }
+  
+  
+  .review-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    background: #f8f8f8;
+  }
+  
+  .close-btn, .submit-btn {
+    padding: 12px 18px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  
+  .close-btn {
+    background: #ccc;
+  }
+  
+  .submit-btn {
+    background: #4caf50;
+    color: white;
+  }
+  
+  .success-popup {
+    background-color: rgb(155, 216, 155);
+    position: absolute;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100px;
+    height: 47px;
+    margin-top: 450px;
+    margin-bottom: 20px;
+    margin-left: 120px;
+    margin-right: auto;
+    display: inline-block;
+    z-index: 100;
+  }
+  
+  
