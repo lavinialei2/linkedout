@@ -6,6 +6,8 @@ import MapPage from './MapPage.jsx'
 import IntroSlideshow from './IntroSlideshow.jsx'
 import StampPage from './StampPage.jsx'
 import ReviewForm from './ReviewForm.jsx'
+import AddFriendPage from './AddFriendPage.jsx';
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -15,7 +17,8 @@ createRoot(document.getElementById('root')).render(
         <Route path="/map" element={<MapPage />} />
         <Route path="/stampbook" element={<StampPage />} />
         <Route path="/post" element={<ReviewForm />} />
+        <Route path="/addFriend" element={<AddFriendPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
-)
+);

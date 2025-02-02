@@ -23,7 +23,6 @@ const FriendBar = ({ onSelectAdventure }) => {
         </div>
       ))}
 
-      {/* Add the circular button with a plus sign at the end */}
       <button className="add-friend-btn" onClick={handleAddFriend}>
         +
       </button>
