@@ -18,7 +18,7 @@ const Map = ({ selectedAdventure, adventures }) => {
     useEffect(() => {
       if (coordinates && coordinates.length > 0) {
         const bounds = coordinates.map(([lat, lng]) => [lat, lng])
-        map.fitBounds(bounds, { padding: [50, 50] })
+        map.fitBounds(bounds, { padding: [5, 5] })
       }
     }, [coordinates, map])
     return null

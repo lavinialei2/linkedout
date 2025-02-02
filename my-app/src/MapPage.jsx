@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useMemo } from "react"
 import { useNavigate } from "react-router-dom"
 import Map from "./components/Map"
 import FriendBar from "./components/FriendBar"
@@ -13,7 +13,6 @@ const MapPage = () => {
   const [selectedAdventure, setSelectedAdventure] = useState(null)
   const [isAdventurePanelOpen, setIsAdventurePanelOpen] = useState(false)
   const [searchTerm, setSearchTerm] = useState("")
-  const [filteredAdventures, setFilteredAdventures] = useState(adventures)
   const navigate = useNavigate()
 
   const handleSelectAdventure = (adventureId) => {
@@ -36,12 +35,25 @@ const MapPage = () => {
     navigate("/post")
   }
 
-  useEffect(() => {
-    const filtered = Object.entries(adventures).filter(([id, adventure]) => {
-      const tags = adventure.stops.flatMap((stop) => stop.tags || [])
-      return tags.some((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase()))
-    })
-    setFilteredAdventures(Object.fromEntries(filtered))
+  const filteredAdventures = useMemo(() => {
+    if (!searchTerm) return adventures
+
+    return Object.fromEntries(
+      Object.entries(adventures).filter(([id, adventure]) => {
+        const tags = adventure.stops.flatMap((stop) => stop.tags || [])
+        const adventureName = adventure.name.toLowerCase()
+        const searchLower = searchTerm.toLowerCase()
+
+        return (
+          tags.some((tag) => tag.toLowerCase().includes(searchLower)) ||
+          adventureName.includes(searchLower) ||
+          adventure.stops.some(
+            (stop) =>
+              stop.name.toLowerCase().includes(searchLower) || stop.description.toLowerCase().includes(searchLower),
+          )
+        )
+      }),
+    )
   }, [searchTerm])
 
   return (
@@ -63,7 +75,7 @@ const MapPage = () => {
       </header>
       <FriendBar onSelectAdventure={handleSelectAdventure} />
       <div className="app-content">
-        <Map selectedAdventure={selectedAdventure} adventures={filteredAdventures} />
+        <Map selectedAdventure={selectedAdventure} adventures={adventures} />
         <AdventurePanel
           isOpen={isAdventurePanelOpen}
           onClose={() => setIsAdventurePanelOpen(false)}
@@ -74,7 +86,9 @@ const MapPage = () => {
         <button className="floating-button" onClick={toggleAdventurePanel}>
           <img src={listIcon || "/placeholder.svg?height=24&width=24"} alt="List Icon" className="list-icon" />
         </button>
-        <button className="floating-button2" onClick={handlePostClick}>+</button>
+        <button className="floating-button2" onClick={handlePostClick}>
+          +
+        </button>
       </div>
     </div>
   )
