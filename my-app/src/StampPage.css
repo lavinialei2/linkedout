@@ -21,9 +21,24 @@ html, body, #root {
   align-items: center; 
 }
 
-.slide-image {
+.image {
   max-width: 100%; 
   max-height: 100%;
   object-fit: contain;
   object-position: center;
+}
+
+.map-button {
+  position: absolute;  /* Position the button absolutely within the container */
+  top: 20px;            /* Adjust the top margin */
+  left: 20px;           /* Adjust the left margin */
+  background: none;     /* Remove default button background */
+  border: none;         /* Remove default button border */
+  cursor: pointer;      /* Change the cursor to a pointer on hover */
+  z-index: 10;          /* Ensure it's above other content */
+}
+
+.map-icon {
+  width: 50px;         /* Adjust the size of the icon */
+  height: 50px;        /* Adjust the size of the icon */
 }
