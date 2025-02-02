@@ -1,16 +1,21 @@
-// src/App.jsx
-import React from 'react';
-import Map from './components/Map';
+import React, { useState } from 'react';
+import Map from './components/map';
 import FriendBar from './components/FriendBar';
 import './App.css';
 
 const App = () => {
+  const [selectedAdventure, setSelectedAdventure] = useState(null);
+
+  const handleSelectAdventure = (adventureId) => {
+    setSelectedAdventure(adventureId);
+  };
+
   return (
     <div className="app-container">
       <header className="app-header">🌍 LinkedOut</header>
-      <FriendBar />
+      <FriendBar onSelectAdventure={handleSelectAdventure} />
       <div className="app-content">
-        <Map />
+        <Map selectedAdventure={selectedAdventure} />
       </div>
     </div>
   );

@@ -1,6 +1,3 @@
-/* src/App.css */
-
-/* Center the phone display on the page */
 html, body, #root {
   height: 100%;
   margin: 0;
@@ -11,10 +8,9 @@ html, body, #root {
   background-color: #f0f0f0;
 }
 
-/* The phone container */
 .app-container {
-  width: 375px; /* Typical phone width */
-  height: 812px; /* Typical phone height */
+  width: 375px; 
+  height: 812px; 
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -44,10 +40,9 @@ html, body, #root {
   border-top-right-radius: 10px;
 }
 
-/* Ensure the content (map) adjusts for both header and friend bar */
 .app-content {
   flex: 1;
-  margin-top: 140px; /* 50px for header + 90px for friend bar */
+  margin-top: 140px; 
   position: relative;
 }
 .app-container {
