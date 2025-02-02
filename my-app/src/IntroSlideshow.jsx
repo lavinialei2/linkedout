@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';  // Import useNavigate
 import './IntroSlideshow.css';
 import { introslides } from './data';  // Importing introslides from data
 
-const IntroSlideshow = ({ onFinish }) => {
+const IntroSlideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate();  // Initialize useNavigate
 
   const nextSlide = () => {
     if (currentSlide < introslides.length - 1) {
       setCurrentSlide(currentSlide + 1);
     } else {
-      onFinish && onFinish(); // Call the onFinish callback when the slideshow ends
+      // Navigate to '/map' when the slideshow finishes
+      navigate('/map');
     }
   };
 
@@ -18,7 +21,7 @@ const IntroSlideshow = ({ onFinish }) => {
       <div className="slideshow-container" onClick={nextSlide}>
         <div className="slide fade-in">
           <img
-            src={introslides[currentSlide].img} 
+            src={introslides[currentSlide].img}
             alt={`Slide ${currentSlide + 1}`}
             className="slide-image"
           />

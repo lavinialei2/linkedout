@@ -1,4 +1,5 @@
 export const introslides = [
+    { id: 0, img: "/icons/landing.png"},
     { id: 1, img: "/icons/intro1.png"},
     { id: 2, img: "/icons/intro2.png"},
     { id: 3, img: "/icons/intro3.png"},

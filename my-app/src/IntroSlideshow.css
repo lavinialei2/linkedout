@@ -11,16 +11,16 @@ html, body, #root {
 }
 
 .app-container {
-  width: 390px;
-  height: 844px;
-  border-radius: 20px;
+  width: 375px; 
+  height: 812px; 
+  border: 1px solid #ccc;
+  border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  background-color: #e0e0ff;
+  background-color: #ffffff;
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 20px;
 }
 
 .slideshow-container {
