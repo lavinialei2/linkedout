@@ -11,7 +11,6 @@ const IntroSlideshow = () => {
     if (currentSlide < introslides.length - 1) {
       setCurrentSlide(currentSlide + 1);
     } else {
-      // Navigate to '/map' when the slideshow finishes
       navigate('/map');
     }
   };
