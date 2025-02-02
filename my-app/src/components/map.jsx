@@ -28,8 +28,9 @@ const Map = ({ selectedAdventure }) => {
     <MapContainer
       center={[34.0522, -118.2437]}
       zoom={13}
-      style={{ width: '100%', height: '100%' }}
+      style={{ width: '100%', height: '100%' }} /* Full height within .app-content */
     >
+
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

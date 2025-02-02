@@ -3,9 +3,9 @@ import Map from './components/Map';
 import FriendBar from './components/FriendBar';
 import Panel from './components/Panel';
 import { adventures } from './data';
-import './App.css';
+import './MapPage.css';
 
-const App = () => {
+const MapPage = () => {
   const [selectedAdventure, setSelectedAdventure] = useState(null);
 
   const handleSelectAdventure = (adventureId) => {
@@ -14,7 +14,7 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <header className="app-header">🌍 LinkedOut</header>
+      <header className="app-header">LinkedOut</header>
       <FriendBar onSelectAdventure={handleSelectAdventure} />
       <div className="app-content">
         <Map selectedAdventure={selectedAdventure} />
@@ -23,4 +23,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default MapPage;
