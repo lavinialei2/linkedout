@@ -5,4 +5,3 @@ export const friends = [
     { id: 4, name: "Chris", img: "/icons/friend4.png", adventureId: "adventure4" },
     { id: 5, name: "Emma", img: "/icons/friend5.png", adventureId: "adventure5" },
   ];
-  
