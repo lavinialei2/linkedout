@@ -15,7 +15,6 @@ const StampPage = () => {
       <button className="map-button" onClick={handleMapClick}>
         <img src={mapIcon} alt="Map Icon" className="map-icon" />
       </button>
-      
       <img
         src={'/icons/stamp.png'}
         alt="Stamp-page"

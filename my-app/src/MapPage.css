@@ -27,7 +27,7 @@ html, body, #root {
   left: 0;
   width: 100%;
   height: 50px;
-  background-color: #228B22;
+  background-color: #A6D6EB;
   color: white;
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
@@ -44,4 +44,22 @@ html, body, #root {
   flex: 1;
   margin-top: 140px; 
   position: relative;
+}
+
+.stamp-icon {
+  cursor: pointer;
+  width: 33px; 
+  height: 40px;
+  position: absolute;
+  top: 5px;
+  left: 15px;
+}
+
+.logo-icon {
+  cursor: pointer;
+  width: 180px; 
+  height: 30px;
+  position: absolute;
+  top: 10px;
+  left: 100px;
 }

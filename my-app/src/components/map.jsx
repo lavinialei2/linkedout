@@ -7,12 +7,23 @@ import './Map.css';
 const Map = ({ selectedAdventure }) => {
   const [highlightedAdventure, setHighlightedAdventure] = useState(null);
 
+  // Darker versions of the rainbow colors
+  const darkRainbowColors = [
+    '#8B0000', // Dark Red
+    '#FF8C00', // Dark Orange
+    '#9B870C', // Dark Yellow
+    '#006400', // Dark Green
+    '#00008B', // Dark Blue
+    '#4B0082', // Dark Indigo
+    '#9400D3', // Dark Violet
+  ];
+
   const PanToAdventure = ({ coordinates }) => {
     const map = useMap();
     useEffect(() => {
       if (coordinates && coordinates.length > 0) {
         const bounds = coordinates.map(([lat, lng]) => [lat, lng]);
-        map.fitBounds(bounds, { padding: [50, 50] });
+        map.fitBounds(bounds, { padding: [20, 20] });
       }
     }, [coordinates, map]);
     return null;
@@ -35,31 +46,34 @@ const Map = ({ selectedAdventure }) => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
 
-      {Object.values(adventures).map((adventure) => (
-        <React.Fragment key={adventure.name}>
-          <Polyline
-            positions={adventure.route}
-            color={highlightedAdventure?.name === adventure.name ? 'red' : 'blue'}
-            weight={highlightedAdventure?.name === adventure.name ? 5 : 3}
-          />
-          {adventure.stops.map((stop) => (
-            <Marker key={stop.id} position={stop.coordinates}>
-              <Popup>
-                <div className="popup-content">
-                  <img src={stop.image} alt={stop.name} className="popup-image" />
-                  <h2>{stop.name}</h2>
-                  <p>{stop.description}</p>
-                  <div className="popup-tags">
-                    {stop.tags.map((tag, index) => (
-                      <span key={index} className="tag">{tag}</span>
-                    ))}
+      {Object.values(adventures).map((adventure, index) => {
+        const color = darkRainbowColors[index % darkRainbowColors.length]; // Cycle through dark rainbow colors
+        return (
+          <React.Fragment key={adventure.name}>
+            <Polyline
+              positions={adventure.route}
+              color={highlightedAdventure?.name === adventure.name ? '#8B0000' : color} // Highlight selected route in dark red
+              weight={highlightedAdventure?.name === adventure.name ? 5 : 3}
+            />
+            {adventure.stops.map((stop) => (
+              <Marker key={stop.id} position={stop.coordinates}>
+                <Popup>
+                  <div className="popup-content">
+                    <img src={stop.image} alt={stop.name} className="popup-image" />
+                    <h2>{stop.name}</h2>
+                    <p>{stop.description}</p>
+                    <div className="popup-tags">
+                      {stop.tags.map((tag, index) => (
+                        <span key={index} className="tag">{tag}</span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </Popup>
-            </Marker>
-          ))}
-        </React.Fragment>
-      ))}
+                </Popup>
+              </Marker>
+            ))}
+          </React.Fragment>
+        );
+      })}
 
       {highlightedAdventure && <PanToAdventure coordinates={highlightedAdventure.route} />}
     </MapContainer>
