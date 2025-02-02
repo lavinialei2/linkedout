@@ -1,0 +1,62 @@
+/* IntroSlideshow.css */
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600&display=swap');
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-container {
+  width: 390px;
+  height: 844px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: #e0e0ff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.slideshow-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.slide {
+  position: relative;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.slide-image {
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+}
+
+.slide-text {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 1.4rem;
+  color: #222;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
